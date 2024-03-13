@@ -9,13 +9,13 @@ pipline{
             }
         }
 
-         stage('test'){
-        steps{
-            script{
-                echo "tets in progress"
+        stage('test'){
+            steps{
+                script{
+                    echo "tets in progress"
+                    }
                 }
             }
         }
-    }
    
 }
