@@ -1,20 +1,21 @@
-node {
-    git branch: 'main' , url: 'https://github.com/takles22/jenkins1.git'
-    stage ('build'){
-        try {
-            sh 'echo"build stage"'
+pipline{
+    agent any
+    
+    stages{
+        stage('build') {
+            steps{
+                echo "build in progress"
+            
+            }
         }
-        catch (Exception e) {
-            sh 'echo "exception founf"'
-            throw e
+
+         stage('test'){
+        steps{
+            script{
+                echo "tets in progress"
+                }
+            }
         }
     }
-    stage ('test') {
-        if (env.BRANCH_NAME == "feat") {
-            sh'echo"test stage"'
-        }
-        else{
-            sh'echo"skip test stage"'
-        }
-    }
+   
 }
